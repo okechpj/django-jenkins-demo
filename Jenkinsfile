@@ -28,14 +28,15 @@ pipeline {
             }
         }
 
-        // stage('Install Dependencies') {
-        //     steps {
-        //         script {
-        //             // Install Django and other dependencies
-        //             sh './${VENV}/bin/pip install -r ${REQUIREMENTS}'
-        //         }
-        //     }
-        // }
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Install Django and other dependencies
+                    sh './${VENV}/bin/pip install django'
+                    sh './${VENV}/bin/pip install -r ${REQUIREMENTS}'
+                }
+            }
+        }
 
         stage('Run Migrations') {
             steps {
