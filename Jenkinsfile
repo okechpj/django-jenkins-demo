@@ -16,6 +16,17 @@ pipeline {
             }
         }
 
+          stage('install python and update server') {
+            steps {
+                script {
+                    // Install python and update environ
+                    sh 'sudo apt update'
+                    sh 'sudo apt install python3 python3-pip -y'
+                }
+            }
+        }
+
+        
         stage('Setup Python Environment') {
             steps {
                 script {
@@ -39,7 +50,7 @@ pipeline {
             steps {
                 script {
                     // Apply database migrations
-                    sh './${VENV}/bin/python manage.py migrate'
+                    sh './${VENV}/bin/python3 manage.py migrate'
                 }
             }
         }
