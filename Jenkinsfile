@@ -49,7 +49,7 @@ pipeline {
             steps {
                 script {
                     // Run Django tests
-                    sh './${VENV}/bin/python manage.py test'
+                    sh './${VENV}/bin/python3 manage.py test'
                 }
             }
         }
