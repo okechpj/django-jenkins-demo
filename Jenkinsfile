@@ -16,16 +16,6 @@ pipeline {
             }
         }
 
-          stage('install python and update server') {
-            steps {
-                script {
-                    // Install python and update environ
-                    sh 'sudo apt update'
-                    sh 'sudo apt install python3 python3-pip -y'
-                }
-            }
-        }
-
         
         stage('Setup Python Environment') {
             steps {
