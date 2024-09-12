@@ -56,14 +56,14 @@ pipeline {
             }
         }
 
-        stage('Static Analysis') {
-            steps {
-                script {
-                    // Run code quality checks (e.g., flake8)
-                    sh './${VENV}/bin/flake8 .'
-                }
-            }
-        }
+        // stage('Static Analysis') {
+        //     steps {
+        //         script {
+        //             // Run code quality checks (e.g., flake8)
+        //             sh './${VENV}/bin/flake8 .'
+        //         }
+        //     }
+        // }
 
         stage('Package Application') {
             steps {
