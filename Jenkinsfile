@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define environment variables for Python
         VENV = 'venv' // Virtual environment directory
-        // REQUIREMENTS = 'requirements.txt' // Requirements file for dependencies
+        REQUIREMENTS = 'requirements.txt' // Requirements file for dependencies
         DJANGO_SETTINGS_MODULE = 'django_demo.settings' // Replace with your Django project name
     }
 
@@ -33,7 +33,7 @@ pipeline {
                 script {
                     // Install Django and other dependencies
                     sh './${VENV}/bin/pip install django'
-                    // sh './${VENV}/bin/pip install -r ${REQUIREMENTS}'
+                    sh './${VENV}/bin/pip install -r ${REQUIREMENTS}'
                 }
             }
         }
